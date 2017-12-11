@@ -1,0 +1,42 @@
+.loginmain{
+	position: absolute;
+	top:5.33333rem;
+	width: 10rem;
+}
+.registermain{
+	display: none;
+	position: absolute;
+	width: 10rem;
+	top: 4rem;
+}
+input{
+	width:5.0rem;
+	height: 1rem;
+	display: block;
+	margin: 0.266667rem auto !important;
+	border-radius: 0.133333rem;
+	border: 0.013333rem solid #c1c1c1;
+	padding: 0.266667rem !important;
+	font-size: 16px;
+}
+.buttun{
+	height: 1.5rem;
+	width: 5.6rem;
+	margin: 0.666667rem auto;
+}
+.buttun div{
+	float: left;
+	width: 2.3rem;
+	text-align: center;
+	height: 0.666667rem;
+	font-size: 18px;
+	background-color: #17bcbd;
+	border-radius: 0.133333rem;
+	color: #ffffff;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	cursor: pointer;
+}
+.login,.rregister{
+	margin-right: 1rem;
+}

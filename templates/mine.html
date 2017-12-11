@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, minimum-scale=1">
+	<title>消息</title>
+	<script type='text/javascript' src='/static/js/index.min.js'></script>
+	<link rel='stylesheet' type='text/css' href='/static/css/mine.css'></style>
+	<link rel='stylesheet' type='text/css' href='/static/css/all.css'></style>
+</head>
+<body>
+	<div class="main" id='main'>
+		<span class="loginout" id='loginout'></span>
+		<div class="banner">
+			<div class="user_head" id='user_head'>
+				<img src="/static/img/head{{userhead}}.jpg" alt="">
+			</div>
+			<div class="user_name">{{nickname}}</div>
+		</div>
+		<div class="publish">
+			<div class="lan">
+				<a href="/mypublish#1">
+					<div class="icon icon1">
+						
+					</div>
+					<div class="word">
+						我的发布
+					</div>
+				</a>
+			</div>
+			<div class="lan">
+				<a href="/mypublish#3">
+					<div class="icon icon2">
+						
+					</div>
+					<div class="word">
+						已解决
+					</div>
+				</a>
+			</div>
+			<div class="lan">
+				<a href="/mypublish#2">
+					<div class="icon icon3">
+						
+					</div>
+					<div class="word">
+						未解决
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="information">
+			<div class="lan">
+				<div class="icon icon4">
+					
+				</div>
+				<div class="word">
+					昵称
+				</div>
+			</div>
+			<div class="lan">
+				<div class="icon icon5">
+					
+				</div>
+				<div class="word" data-id ={{stu_id}} data-name={{name}}>
+					学号
+				</div>
+			</div>
+			<div class="lan">
+				<div class="icon icon6">
+					
+				</div>
+				<div class="word">
+					密码
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="headbg" id = 'headbg'>
+		<img src="" class="changeheadimg" id='changeheadimg'>
+		<div class="headliang" id='headliang'>
+			<canvas id= 'imgcanvas'></canvas>
+		</div>
+		<div class="headbutton" id='headbutton'>
+			<label class="addimg">
+				上传图片
+				<input type="file" accept="image/*" class="addimginput" id = 'addimginput'>
+			</label>
+			<div class="wangchengjiancai">
+				完成剪裁
+			</div>
+			<div class="quxiaoshangchuan" id='quxiaoshangchuan'>
+				取消
+			</div>
+		</div>
+		<div id="int"></div>
+	</div>
+	<div class="menu">
+		<div class="menu_in">
+			<div class="menu_home " id="menu_home" >
+				首页
+			</div>
+			<div class="menu_active" id="menu_active">
+				活动
+			</div>
+		
+			<div class="menu_message" id="menu_message">
+				消息
+			</div>
+			<div class="menu_my  active" id="menu_my">
+				我的
+			</div>
+		</div>
+		<div class="menu_publish" id='menu_publish'></div>
+	</div>
+	<script type='text/javascript' src="/static/js/jquery.js"></script>
+	<script type='text/javascript' src="/static/js/hammer.min.js"></script>
+	<script type='text/javascript' src="/static/js/all.js"></script>
+	<script type='text/javascript' src="/static/js/mine.js"></script>
+</body>
+</html>

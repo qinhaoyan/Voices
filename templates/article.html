@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <title>青年之声</title>
+    <script type='text/javascript' src='/static/js/index.min.js'></script>
+    <script type='text/javascript' src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js'></script>
+    <link rel='stylesheet' type='text/css' href='/static/css/article.css'>
+    </style>
+    <link rel='stylesheet' type='text/css' href='/static/css/all.css'>
+    </style>
+</head>
+
+<body>
+    <div class="main">
+    	<div class="article_out" id='article_out'>
+                <div class="article">
+                    <div class="article_user">
+                        <div class="article_user_head"><img src="/static/img/head{{userhead}}.jpg"></div>
+                        <div class="article_user_word">
+                            <div class="article_user_word_name" id= 'article_user_word_name' data-id={{userid}}>{{username}}</div>
+                            <div class="article_user_word_time">{{time}}</div>
+                        </div>
+                        {% if type == '未解决'%}
+                        <div class="article_user_fun" data-fun='1' id='article_user_fun' data-id={{userid}} data-articleid = {{articleid}}>
+                            <div class="article_user_fun_icon1"></div>
+                            <div class="article_user_fun_word1">{{type}}</div>
+                        </div>
+                        {% endif %}
+                        {% if type == '已解决'%}
+                        <div class="article_user_fun" data-fun='2' id='article_user_fun' data-id={{userid}}>
+                            <div class="article_user_fun_icon2"></div>
+                            <div class="article_user_fun_word2">{{type}}</div>
+                        </div>
+                        {% endif %}
+                        
+                    </div>
+                     <p class="article_p">{{article}}</p>
+                    <div class="article_img">
+                        {% for imgs in img %}
+                            <div class="article_img_noma article_img_div" data-img="" data-n='1'><img src="/static/img/{{imgs}}.jpg"></div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <script>
+                    var comment = {{comment}};
+                    if(comment.length==0){
+                        var div_comment = document.createElement('div');
+                        div_comment.setAttribute('class',  "nocomment");
+                        div_comment.innerHTML = '还没有评论哦' 
+                        document.getElementById('article_out').appendChild(div_comment)
+                    }
+                </script>
+                {% for con in comment %}
+                <div class="comment">
+                	<div class="comment_user">
+                	    <div class="comment_user_head"><img src="/static/img/head{{con.comuser_head}}.jpg"></div>
+                	    <div class="comment_user_word">
+                	        <div class="comment_user_word_name" >{{con.comuser}}</div>
+                	        <div class="comment_user_word_time">{{con.time}}</div>
+                	    </div>
+                	</div>
+                	<div class="comment_wordout">
+                		<div class="comment_word">
+                			<div class="comment_word_span" data-userid = {{con.comuser_id}} data-user={{con.comuser}} data-comid={{con.comid}}>{{con.cont}}</div>
+                			<div >
+                                {% for subcon in con.subcomment %}
+                				<div class="comment_word_span" data-user={{subcon.subcomuser}}  data-userid={{subcon.subcomuser_id}} data-sub = '1' data-comid={{con.comid}}>
+                					<span class="subuser" >{{subcon.subcomuser}}</span><span> 回复 </span><span class="subuser">{{subcon.subcomuser2}}：</span>
+                					<span class="subword " >{{subcon.cont}}</span>
+                				</div>
+                                {% endfor %}
+                				
+                			</div>
+                		</div>
+                	</div>
+                </div>
+                {% endfor %}
+           	</div>
+        <div class="showimg" id='showimg'>
+            <div id="int" style="color:#fff;z-index: 10"></div>
+            <div id="int2" style="color:#fff;z-index: 10"></div>
+            <div id="int3" style="color:#fff;z-index: 10"></div>
+        </div>
+        <div class="addcomment">
+            <textarea name="" placeholder="想说点什么？" class="addcomment_input" id='addcomment_input' id="" cols="30" rows="10"></textarea>
+            {% if likeo == 1 %}
+            <div class="addcomment_liken" id='addcomment_liken' data-like={{likeo}} data-liken={{liken}} data-articleid = {{url}} style="color:rgb(252, 86, 85)">
+                <span class="article_fun_like_span">&#xe60e</span>
+                <div class="article_fun_like_wordn">{{liken}}</div>
+            </div>
+            {% endif %}
+            {% if likeo == 0 %}
+            <div class="addcomment_liken" id='addcomment_liken' data-articleid = {{url}} data-like={{likeo}} data-liken={{liken}}>
+                <span class="article_fun_like_span">&#xe631</span>
+                <div class="article_fun_like_wordn">{{liken}}</div>
+            </div>
+            {% endif %}
+        	
+        	<label for="addcomment_input" id='addcomment_comn'>
+	        	<div class="addcomment_comn">
+	        		{{commentn}}
+	        	</div>
+        	</label>
+        	<div class="fasong" data-fasong='0' id='fasong' data-articleid = {{articleid}}>
+        		发送
+        	</div>
+        </div>
+    </div>
+    <script type='text/javascript' src="/static/js/jquery.js"></script>
+    <script type='text/javascript' src="/static/js/all.js"></script>
+    <script type='text/javascript' src="/static/js/article.js"></script>
+</body>
+
+</html>
