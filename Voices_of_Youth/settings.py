@@ -80,8 +80,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME':'Voices_of_Youth',
-        'USER': 'root',
-        'PASSWORD': 'shizhiyue2017',
+        'USER': 'qaz',
+        'PASSWORD': 'qaz',
         'HOST': '',
         'PORT': '',
     }
